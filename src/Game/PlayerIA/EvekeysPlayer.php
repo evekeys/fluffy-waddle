@@ -40,7 +40,9 @@ class EvekeysPlayer extends Player
         // -------------------------------------    -----------------------------------------------------
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
-        if ($this->result->getNbRound() > 8) {
+
+        $nb = $this->result->getNbRound()== 0 ? 0 : ($this->result->getNbRound() % 11);
+        if ($nb == 0) {
 
             if ($this->result->getLastChoiceFor($this->opponentSide) == "foe" && $this->result->getLastScoreFor($this->mySide) >= $this->result->getLastScoreFor($this->opponentSide))
                 return parent::friendChoice();
