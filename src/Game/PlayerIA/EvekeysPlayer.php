@@ -41,9 +41,13 @@ class EvekeysPlayer extends Player
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
 
+        //Vérifier si le nombre de partie est un module de 11 ou pas
         $nb = $this->result->getNbRound()== 0 ? 0 : ($this->result->getNbRound() % 11);
+
+        //Chaque 11e partie
         if ($nb == 0) {
 
+            //Si le dernier élément mis est un foe et que son score est inférieur au mien, alors friend sinon kill
             if ($this->result->getLastChoiceFor($this->opponentSide) == "foe" && $this->result->getLastScoreFor($this->mySide) >= $this->result->getLastScoreFor($this->opponentSide))
                 return parent::friendChoice();
             else
