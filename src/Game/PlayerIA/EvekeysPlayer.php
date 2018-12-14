@@ -9,7 +9,7 @@ use Hackathon\Game\Result;
  * @package Hackathon\PlayerIA
  * @author FlorentD
  */
-class EvekeysPlayerPlayer extends Player
+class EvekeysPlayer extends Player
 {
     protected $mySide;
     protected $opponentSide;
